@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Main_window extends StatefulWidget {
   const Main_window({super.key});
 
@@ -8,6 +10,6 @@ class Main_window extends StatefulWidget {
 class _Main_windowState extends State<Main_window> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold();
   }
 }
