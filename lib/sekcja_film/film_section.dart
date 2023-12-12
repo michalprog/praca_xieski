@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Film_section extends StatefulWidget {
-  const Film_section({super.key});
+  final Function(int) changeWindow;
+
+  const Film_section({super.key,required this.changeWindow});
 
   @override
   State<Film_section> createState() => _Film_sectionState();

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class Main_window extends StatefulWidget {
-  const Main_window({super.key});
+  final Function(int) changeWindow;
+  const Main_window({super.key,required this.changeWindow});
 
   @override
   State<Main_window> createState() => _Main_windowState();
