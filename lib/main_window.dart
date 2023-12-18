@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class Main_window extends StatefulWidget {
-  final Function(int) changeWindow;
-  const Main_window({super.key,required this.changeWindow});
+
+  const Main_window({super.key});
 
   @override
   State<Main_window> createState() => _Main_windowState();
@@ -44,7 +44,9 @@ class _Main_windowState extends State<Main_window> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+
+                  },
                   child: Text("lista wypozyczen")),
             ),
             const Gap(30),

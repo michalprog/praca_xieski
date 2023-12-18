@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Borrow_section extends StatefulWidget {
-  final Function(int) changeWindow;
-  const Borrow_section({super.key,required this.changeWindow});
+  const Borrow_section({super.key});
 
   @override
   State<Borrow_section> createState() => _Borrow_sectionState();

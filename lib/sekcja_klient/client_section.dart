@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Client_section extends StatefulWidget {
-  final Function(int) changeWindow;
-  const Client_section({super.key,required this.changeWindow});
+
+  const Client_section({super.key});
 
   @override
   State<Client_section> createState() => _Client_sectionState();
