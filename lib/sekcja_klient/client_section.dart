@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Client_section extends StatefulWidget {
-
-  const Client_section({super.key});
+  final Function(int) manager;
+  const Client_section({Key? key, required this.manager}) : super(key: key);
 
   @override
   State<Client_section> createState() => _Client_sectionState();

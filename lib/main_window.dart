@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class Main_window extends StatefulWidget {
+  final Function(int) manager;
+  const Main_window({Key? key, required this.manager}) : super(key: key);
 
-  const Main_window({super.key});
 
   @override
   State<Main_window> createState() => _Main_windowState();

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Read_films extends StatefulWidget {
-  const Read_films({super.key});
+  final Function(int) manager;
+  const Read_films({Key? key, required this.manager}) : super(key: key);
 
   @override
   State<Read_films> createState() => _Read_filmsState();
