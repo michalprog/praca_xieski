@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:xieski_project/Widget_Menager.dart';
 import 'package:xieski_project/sekcja_film/film_section.dart';
@@ -6,16 +5,14 @@ import 'package:xieski_project/sekcja_filmy_odczyt/read_films_main.dart';
 import 'package:xieski_project/sekcja_klient/client_section.dart';
 import 'package:xieski_project/sekcja_wypozyczenia/borrow_section.dart';
 
-
 import 'main_window.dart';
 
 void main() {
-  runApp( const MainApp());
+  runApp(const MainApp());
 }
 
 class MainApp extends StatefulWidget {
   const MainApp({super.key});
-
 
   @override
   State<MainApp> createState() => _MainAppState();
@@ -27,13 +24,14 @@ class _MainAppState extends State<MainApp> {
   @override
   void initState() {
     super.initState();
-    widgets =[
-      Main_window(manager:changeWindow),
-      Film_section(manager:changeWindow),
-      Read_films(manager:changeWindow),
-      Client_section(manager:changeWindow),
-      Borrow_section(manager:changeWindow)];
-    actualWidget=widgets[0];
+    widgets = [
+      Main_window(manager: changeWindow),
+      Read_films(manager: changeWindow),
+       Borrow_section(manager: changeWindow),
+      Client_section(manager: changeWindow),
+      Film_section(manager: changeWindow),
+    ];
+    actualWidget = widgets[0];
   }
 
   @override
@@ -46,6 +44,4 @@ class _MainAppState extends State<MainApp> {
       actualWidget = widgets[number];
     });
   }
-
-
 }

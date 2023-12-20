@@ -13,7 +13,12 @@ class _Film_sectionState extends State<Film_section> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:Center(child:Text("sekcja filmow"))),
+      appBar: AppBar(title:Center(child:Text("sekcja filmow")),
+    leading: IconButton(
+    icon: Icon(Icons.arrow_back),
+    onPressed: () {
+    widget.manager(0);
+    },),)
     );
   }
 }

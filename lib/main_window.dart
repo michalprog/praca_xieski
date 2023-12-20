@@ -32,7 +32,7 @@ class _Main_windowState extends State<Main_window> {
                           borderRadius: BorderRadius.circular(20),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {widget.manager(1);},
                       child: Text("lista mozliwych filmow")),
                 ),
             const Gap(30),
@@ -46,7 +46,7 @@ class _Main_windowState extends State<Main_window> {
                     ),
                   ),
                   onPressed: () {
-
+                    widget.manager(2);
                   },
                   child: Text("lista wypozyczen")),
             ),
@@ -60,7 +60,9 @@ class _Main_windowState extends State<Main_window> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    widget.manager(3);
+                  },
                   child: Text("sekcja klient")),
             ),
             const Gap(30),
@@ -73,7 +75,9 @@ class _Main_windowState extends State<Main_window> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    widget.manager(4);
+                  },
                   child: Text("sekcja filmy")),
             ),
            Spacer(),

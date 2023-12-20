@@ -12,7 +12,15 @@ class _Client_sectionState extends State<Client_section> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:Center(child:Text("sekcja klienta"))),
+      appBar: AppBar(
+        title: Center(child: Text("sekcja klienta")),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            widget.manager(0);
+          },
+        ),
+      ),
     );
   }
 }

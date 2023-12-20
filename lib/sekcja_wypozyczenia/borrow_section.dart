@@ -12,7 +12,15 @@ class _Borrow_sectionState extends State<Borrow_section> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:Center(child:Text("lista wypozyczonych filmow"))),
+      appBar: AppBar(
+        title: Center(child: Text("lista wypozyczonych filmow")),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            widget.manager(0);
+          },
+        ),
+      ),
     );
   }
 }

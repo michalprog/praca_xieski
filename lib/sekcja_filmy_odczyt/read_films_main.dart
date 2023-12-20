@@ -12,7 +12,12 @@ class _Read_filmsState extends State<Read_films> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:Center(child:Text("lista mozliwych filmow"))),
+      appBar: AppBar(title:Center(child:Text("lista mozliwych filmow")),
+    leading: IconButton(
+    icon: Icon(Icons.arrow_back),
+    onPressed: () {
+    widget.manager(0);
+    },),)
     );
   }
 }
