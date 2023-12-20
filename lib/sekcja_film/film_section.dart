@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:xieski_project/sekcja_film/film_add.dart';
+import 'package:xieski_project/sekcja_film/film_modify.dart';
+import 'package:xieski_project/sekcja_film/film_remove.dart';
+import 'package:xieski_project/sekcja_film/films.dart';
 
 class Film_section extends StatefulWidget {
   final Function(int) manager;
@@ -32,20 +36,25 @@ class _Film_sectionState extends State<Film_section> {
             },
             destinations: [
               NavigationRailDestination(
-                icon: Icon(Icons.cancel),
-                selectedIcon: Icon(Icons.cancel_outlined),
-                label: Text('x'),
+                icon: Icon(Icons.add),
+                selectedIcon: Icon(Icons.add_circle_outline),
+                label: Text('dodaj film'),
               ),
               NavigationRailDestination(
-                icon: Icon(Icons.cancel),
-                selectedIcon: Icon(Icons.cancel_outlined),
-                label: Text('x'),
+                icon: Icon(Icons.edit),
+                selectedIcon: Icon(Icons.edit_outlined),
+                label: Text('edytuj dane filmu'),
               ),
               NavigationRailDestination(
-                icon: Icon(Icons.cancel),
-                selectedIcon: Icon(Icons.cancel_outlined),
-                label: Text('x'),
+                icon: Icon(Icons.delete),
+                selectedIcon: Icon(Icons.delete_outline),
+                label: Text('usun film'),
               ),
+              NavigationRailDestination(
+                icon: Icon(Icons.list),
+                selectedIcon: Icon(Icons.view_list),
+                label: Text('lista filmow'),
+              )
             ],
           )
         ],

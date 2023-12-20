@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:xieski_project/sekcja_klient/client_add.dart';
+import 'package:xieski_project/sekcja_klient/client_modify.dart';
+import 'package:xieski_project/sekcja_klient/client_remove.dart';
+import 'package:xieski_project/sekcja_klient/clients.dart';
+
 
 class Client_section extends StatefulWidget {
   final Function(int) manager;
@@ -34,20 +39,25 @@ class _Client_sectionState extends State<Client_section> {
             },
             destinations: [
               NavigationRailDestination(
-                icon: Icon(Icons.cancel),
-                selectedIcon: Icon(Icons.cancel_outlined),
-                label: Text('x'),
+                icon: Icon(Icons.add),
+                selectedIcon: Icon(Icons.add_circle_outline),
+                label: Text('dodaj klienta'),
               ),
               NavigationRailDestination(
-                icon: Icon(Icons.cancel),
-                selectedIcon: Icon(Icons.cancel_outlined),
-                label: Text('x'),
+                icon: Icon(Icons.edit),
+                selectedIcon: Icon(Icons.edit_outlined),
+                label: Text('edytuj dane klienta'),
               ),
               NavigationRailDestination(
-                icon: Icon(Icons.cancel),
-                selectedIcon: Icon(Icons.cancel_outlined),
-                label: Text('x'),
+                icon: Icon(Icons.delete),
+                selectedIcon: Icon(Icons.delete_outline),
+                label: Text('usun klienta'),
               ),
+              NavigationRailDestination(
+                icon: Icon(Icons.list),
+                selectedIcon: Icon(Icons.view_list),
+                label: Text('lista klientow'),
+              )
             ],
           )
         ],
