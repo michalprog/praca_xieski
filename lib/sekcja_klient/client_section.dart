@@ -9,8 +9,10 @@ class Client_section extends StatefulWidget {
 }
 
 class _Client_sectionState extends State<Client_section> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text("sekcja klienta")),
@@ -20,6 +22,35 @@ class _Client_sectionState extends State<Client_section> {
             widget.manager(0);
           },
         ),
+      ),
+      body: Row(
+        children: [
+          NavigationRail(
+            selectedIndex: selectedIndex,
+            onDestinationSelected: (int index) {
+              setState(() {
+                selectedIndex = index;
+              });
+            },
+            destinations: [
+              NavigationRailDestination(
+                icon: Icon(Icons.cancel),
+                selectedIcon: Icon(Icons.cancel_outlined),
+                label: Text('x'),
+              ),
+              NavigationRailDestination(
+                icon: Icon(Icons.cancel),
+                selectedIcon: Icon(Icons.cancel_outlined),
+                label: Text('x'),
+              ),
+              NavigationRailDestination(
+                icon: Icon(Icons.cancel),
+                selectedIcon: Icon(Icons.cancel_outlined),
+                label: Text('x'),
+              ),
+            ],
+          )
+        ],
       ),
     );
   }

@@ -10,15 +10,46 @@ class Film_section extends StatefulWidget {
 }
 
 class _Film_sectionState extends State<Film_section> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(title:Center(child:Text("sekcja filmow")),
     leading: IconButton(
     icon: Icon(Icons.arrow_back),
     onPressed: () {
     widget.manager(0);
-    },),)
+    },),),
+      body: Row(
+        children: [
+          NavigationRail(
+            selectedIndex: selectedIndex,
+            onDestinationSelected: (int index) {
+              setState(() {
+                selectedIndex = index;
+              });
+            },
+            destinations: [
+              NavigationRailDestination(
+                icon: Icon(Icons.cancel),
+                selectedIcon: Icon(Icons.cancel_outlined),
+                label: Text('x'),
+              ),
+              NavigationRailDestination(
+                icon: Icon(Icons.cancel),
+                selectedIcon: Icon(Icons.cancel_outlined),
+                label: Text('x'),
+              ),
+              NavigationRailDestination(
+                icon: Icon(Icons.cancel),
+                selectedIcon: Icon(Icons.cancel_outlined),
+                label: Text('x'),
+              ),
+            ],
+          )
+        ],
+      ),
     );
   }
 }
