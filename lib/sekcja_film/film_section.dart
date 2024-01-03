@@ -15,11 +15,23 @@ class Film_section extends StatefulWidget {
 
 class _Film_sectionState extends State<Film_section> {
   int selectedIndex = 0;
+  List <Widget> widget_list=[
+    Film_add(),
+    Film_modify(),
+    Film_remove(),
+    Films_list(),
+  ];
+  List<String> title_list=[
+    "dodaj film",
+    "modyfikuj film",
+    "usun film",
+    "lista filmow do modyfikacji",
+  ];
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(title:Center(child:Text("sekcja filmow")),
+      appBar: AppBar(title:Center(child:Text(title_list[selectedIndex])),
     leading: IconButton(
     icon: Icon(Icons.arrow_back),
     onPressed: () {
@@ -34,6 +46,7 @@ class _Film_sectionState extends State<Film_section> {
                 selectedIndex = index;
               });
             },
+            labelType: NavigationRailLabelType.selected,
             destinations: [
               NavigationRailDestination(
                 icon: Icon(Icons.add),
@@ -56,7 +69,10 @@ class _Film_sectionState extends State<Film_section> {
                 label: Text('lista filmow'),
               )
             ],
-          )
+          ),
+          Spacer(),
+          widget_list[selectedIndex],
+          Spacer(),
         ],
       ),
     );

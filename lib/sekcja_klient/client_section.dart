@@ -15,6 +15,19 @@ class Client_section extends StatefulWidget {
 
 class _Client_sectionState extends State<Client_section> {
   int selectedIndex = 0;
+  List <Widget> widget_list=[
+    Client_add(),
+    Client_modify(),
+    Client_remove(),
+    Clients_list(),
+
+  ];
+  List<String> title_list=[
+    "dodaj klienta",
+    "modyfikuj klienta",
+    "usun klienta",
+    "lista_klientow",
+  ];
   @override
   Widget build(BuildContext context) {
 
@@ -37,6 +50,7 @@ class _Client_sectionState extends State<Client_section> {
                 selectedIndex = index;
               });
             },
+            labelType: NavigationRailLabelType.selected,
             destinations: [
               NavigationRailDestination(
                 icon: Icon(Icons.add),
@@ -59,7 +73,10 @@ class _Client_sectionState extends State<Client_section> {
                 label: Text('lista klientow'),
               )
             ],
-          )
+          ),
+          Spacer(),
+          widget_list[selectedIndex],
+          Spacer(),
         ],
       ),
     );

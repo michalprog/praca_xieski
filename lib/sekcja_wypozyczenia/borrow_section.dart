@@ -34,6 +34,7 @@ class _Borrow_sectionState extends State<Borrow_section> {
                 selectedIndex = index;
               });
             },
+            labelType: NavigationRailLabelType.selected,
             destinations: [
               NavigationRailDestination(
                 icon: Icon(Icons.cancel),
@@ -50,6 +51,7 @@ class _Borrow_sectionState extends State<Borrow_section> {
                 selectedIcon: Icon(Icons.cancel_outlined),
                 label: Text('x'),
               ),
+
             ],
           )
         ],
