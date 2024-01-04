@@ -35,7 +35,7 @@ class _Clients_listState extends State<Clients_list> {
   Widget build(BuildContext context) {
     return FutureBuilder<List<klient_data>>(
       future: data_list,
-      builder: (BuildContext context, AsyncSnapshot<List<klient_data>> snapshot) { // Zaktualizowany typ AsyncSnapshot
+      builder: (BuildContext context, AsyncSnapshot<List<klient_data>> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {

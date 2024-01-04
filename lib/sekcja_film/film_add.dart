@@ -84,7 +84,7 @@ class _Film_addState extends State<Film_add> {
                 keyboardType: TextInputType.number,
 
                 decoration: InputDecoration(
-                  labelText: "czas trwania filmu",)
+                  labelText: "ocena filmu",)
             ),
           ),
           SizedBox(height: 40),

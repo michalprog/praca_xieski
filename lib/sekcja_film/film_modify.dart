@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:xieski_project/sekcja_film/film_data.dart';
 
 class Film_modify extends StatefulWidget {
+
   final film_data dane_filmu;
   const Film_modify({super.key, required this.dane_filmu,});
 
@@ -94,7 +95,7 @@ class _Film_modifyState extends State<Film_modify> {
                   keyboardType: TextInputType.number,
 
                   decoration: InputDecoration(
-                    labelText: "czas trwania filmu",)
+                    labelText: "ocena filmu",)
               ),
             ),
             SizedBox(height: 40),

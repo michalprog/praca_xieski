@@ -11,12 +11,12 @@ List<film_data> filmDataListFromJson(List<dynamic> str) =>
 
 class film_data {
    String? id;
-  final String tytul;
-  final String gatunek;
-  final String rezyser;
-  final int czas_trwania;
-  final int ocena;
-  final String opis_filmu;
+   String tytul;
+   String gatunek;
+   String rezyser;
+   int czas_trwania;
+   int ocena;
+   String opis_filmu;
 
   film_data(
       { this.id,

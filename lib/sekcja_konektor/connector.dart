@@ -47,10 +47,9 @@ class DB {
 }
 
 class DatabaseConnector {
-  Future<List<film_data>?> getFilmData() async {
+  Future<List<film_data>> getFilmData() async {
     var dane;
-
-    List<film_data>? lista;
+    List<film_data> lista=[];
     try {
       Db? db = await DB.getDB();
 

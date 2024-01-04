@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xieski_project/sekcja_film/film_add.dart';
+import 'package:xieski_project/sekcja_film/film_data.dart';
 import 'package:xieski_project/sekcja_film/film_modify.dart';
 import 'package:xieski_project/sekcja_film/film_remove.dart';
 import 'package:xieski_project/sekcja_film/films.dart';
@@ -15,36 +16,47 @@ class Film_section extends StatefulWidget {
 
 class _Film_sectionState extends State<Film_section> {
   int selectedIndex = 0;
-  List <Widget> widget_list=[
-    Film_add(),
-    Film_remove(),
-    Films_list(),
-    Films_list(),
-    //Film_modify(),
-  ];
-  List<String> title_list=[
-    "dodaj film",
-    "usun film",
-    "lista filmow do modyfikacji",
-    "modyfikuj film",
-  ];
+  List<Widget> widget_list = [];
+  List<String> title_list = [];
+  @override
+  void initState() {
+    super.initState();
+    widget_list = [
+      Film_add(),
+      Films_list(modify: modifyobject),
+      Film_remove(),
+      Film_remove(),
+      //Film_modify(),
+    ];
+    title_list = [
+      "dodaj film",
+      "lista filmow do modyfikacji",
+      "usun film",
+      "modyfikuj film",
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      appBar: AppBar(title:Center(child:Text(title_list[selectedIndex])),
-    leading: IconButton(
-    icon: Icon(Icons.arrow_back),
-    onPressed: () {
-    widget.manager(0);
-    },),),
+      appBar: AppBar(
+        title: Center(child: Text(title_list[selectedIndex])),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            widget.manager(0);
+          },
+        ),
+      ),
       body: Row(
         children: [
           NavigationRail(
             selectedIndex: selectedIndex,
             onDestinationSelected: (int index) {
               setState(() {
-                selectedIndex = index;
+                if (index != 3) {
+                  selectedIndex = index;
+                }
               });
             },
             labelType: NavigationRailLabelType.selected,
@@ -56,7 +68,7 @@ class _Film_sectionState extends State<Film_section> {
               ),
               NavigationRailDestination(
                 icon: Icon(Icons.edit),
-                selectedIcon: Icon(Icons.edit_outlined),
+                selectedIcon: Icon(Icons.view_list),
                 label: Text('edytuj dane filmu'),
               ),
               NavigationRailDestination(
@@ -66,16 +78,25 @@ class _Film_sectionState extends State<Film_section> {
               ),
               NavigationRailDestination(
                 icon: Icon(Icons.list),
-                selectedIcon: Icon(Icons.view_list),
+                selectedIcon: Icon(Icons.edit_outlined),
                 label: Text('lista filmow'),
               )
             ],
           ),
-          Spacer(),
-          widget_list[selectedIndex],
-          Spacer(),
+          Expanded(child: Spacer()),
+          Expanded(child: widget_list[selectedIndex]),
+          Expanded(
+            child: (Spacer()),
+          )
         ],
       ),
     );
+  }
+
+  void modifyobject(film_data) {
+    setState(() {
+      widget_list[3] = Film_modify(dane_filmu: film_data);
+      selectedIndex = 3;
+    });
   }
 }
