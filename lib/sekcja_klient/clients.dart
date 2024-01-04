@@ -13,7 +13,7 @@ class Clients_list extends StatefulWidget {
 
 class _Clients_listState extends State<Clients_list> {
   DatabaseConnector conn = new DatabaseConnector();
-  late Future<List<klient_data>> data_list; // Zaktualizowana deklaracja Future
+  late Future<List<klient_data>> data_list;
   List<klient_data> lista = [];
 
   @override
@@ -48,7 +48,7 @@ class _Clients_listState extends State<Clients_list> {
               itemBuilder: (BuildContext context, int index) {
 
                 return client_list_tile(
-                  kli_data: lista[index],
+                  kli_data: lista[index], modifydata: widget.modify,
                 );
               },
             ),
@@ -60,9 +60,4 @@ class _Clients_listState extends State<Clients_list> {
     );
   }
 
-  void change_data(klient_data) {
-    setState(() {
-      // Tu możesz dodać logikę zmiany danych, jeśli jest potrzebna
-    });
-  }
 }

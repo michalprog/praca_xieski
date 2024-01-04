@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:xieski_project/sekcja_klient/klient_data.dart';
+
+import '../sekcja_konektor/connector.dart';
+
 class Client_modify extends StatefulWidget {
   final klient_data dane_klienta;
   const Client_modify({super.key, required this.dane_klienta});
@@ -9,6 +12,7 @@ class Client_modify extends StatefulWidget {
 }
 
 class _Client_modifyState extends State<Client_modify> {
+  DatabaseConnector conn = new DatabaseConnector();
   final TextEditingController imie = TextEditingController();
   final TextEditingController nazwisko = TextEditingController();
   final TextEditingController adres = TextEditingController();
@@ -21,6 +25,7 @@ class _Client_modifyState extends State<Client_modify> {
     adres.text = widget.dane_klienta.adres;
     telefon.text = widget.dane_klienta.telefon.toString();
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -74,9 +79,23 @@ class _Client_modifyState extends State<Client_modify> {
                 )),
           ),
           SizedBox(height: 30),
-          Container(height: 60,
+          Container(
+              height: 60,
               width: 300,
-              child: ElevatedButton(onPressed: (){},child: Text("modyfikuj dane klienta"),)) //guzik dodaj klienta
+              child: ElevatedButton(
+                onPressed: () {
+                  if(imie!=null&&nazwisko!=null&&adres!=null&&telefon!=null) {
+                    setState(() {
+                      widget.dane_klienta.imie = imie.text;
+                      widget.dane_klienta.nazwisko = nazwisko.text;
+                      widget.dane_klienta.adres = adres.text;
+                      widget.dane_klienta.telefon = int.tryParse(telefon.text) ?? 666;
+                      conn.updateklientData(widget.dane_klienta);
+                    });
+                  }
+                },
+                child: Text("modyfikuj dane klienta"),
+              )) //guzik dodaj klienta
         ],
       ),
     );

@@ -6,6 +6,7 @@ import 'package:xieski_project/sekcja_klient/clients.dart';
 
 class Client_section extends StatefulWidget {
   final Function(int) manager;
+
   const Client_section({Key? key, required this.manager}) : super(key: key);
 
   @override
@@ -13,6 +14,7 @@ class Client_section extends StatefulWidget {
 }
 
 class _Client_sectionState extends State<Client_section> {
+
   int selectedIndex = 0;
   List<Widget> widget_list=[];
   @override
@@ -21,6 +23,7 @@ class _Client_sectionState extends State<Client_section> {
      widget_list = [
       Client_add(),
       Clients_list(modify: modifyobject),
+       Client_remove(),
        Client_remove(),
       //Client_modify(),
     ];
@@ -78,9 +81,9 @@ class _Client_sectionState extends State<Client_section> {
               )
             ],
           ),
-          Spacer(),
-          widget_list[selectedIndex],
-          Spacer(),
+          Expanded(child: Spacer()),
+      Expanded(child:widget_list[selectedIndex]),
+      Expanded(child:Spacer()),
         ],
       ),
     );

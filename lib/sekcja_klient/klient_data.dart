@@ -12,10 +12,10 @@ List<klient_data> klientDataListFromJson(List<dynamic> str) =>
 
 class klient_data {
    String? id;
-  final String imie;
-  final String nazwisko;
-  final String adres;
-  final int telefon;
+   String imie;
+   String nazwisko;
+  String adres;
+  int telefon;
 
   klient_data(
       { this.id,

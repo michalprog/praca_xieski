@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../sekcja_konektor/connector.dart';
+import 'klient_data.dart';
+
 class Client_add extends StatefulWidget {
   const Client_add({super.key});
 
@@ -8,6 +11,7 @@ class Client_add extends StatefulWidget {
 }
 
 class _Client_addState extends State<Client_add> {
+  DatabaseConnector conn = new DatabaseConnector();
   final TextEditingController imie = TextEditingController();
   final TextEditingController nazwisko = TextEditingController();
   final TextEditingController adres = TextEditingController();
@@ -67,7 +71,16 @@ class _Client_addState extends State<Client_add> {
           SizedBox(height: 30),
           Container(height: 60,
               width: 300,
-              child: ElevatedButton(onPressed: (){},child: Text("dodaj klienta"),)) //guzik dodaj klienta
+              child: ElevatedButton(onPressed: (){
+    if(imie!=null&&nazwisko!=null&&adres!=null&&telefon!=null) {
+    klient_data cli=new klient_data(imie: imie.text, nazwisko: nazwisko.text, adres: adres.text, telefon: int.tryParse(telefon.text) ?? 666);
+setState(() async {
+if(await conn.setklientData(cli)){
+  print("obiekt zostal dodany");
+}
+});
+    }
+    }, child: Text("dodaj klienta"),)) //guzik dodaj klienta
         ],
       ),
     );
