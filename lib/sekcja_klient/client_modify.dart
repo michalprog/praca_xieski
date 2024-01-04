@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:xieski_project/sekcja_klient/klient_data.dart';
 class Client_modify extends StatefulWidget {
-  final Klient_data dane_klienta;
+  final klient_data dane_klienta;
   const Client_modify({super.key, required this.dane_klienta});
 
   @override

@@ -17,15 +17,16 @@ class _Film_sectionState extends State<Film_section> {
   int selectedIndex = 0;
   List <Widget> widget_list=[
     Film_add(),
-    Film_modify(),
     Film_remove(),
     Films_list(),
+    Films_list(),
+    //Film_modify(),
   ];
   List<String> title_list=[
     "dodaj film",
-    "modyfikuj film",
     "usun film",
     "lista filmow do modyfikacji",
+    "modyfikuj film",
   ];
   @override
   Widget build(BuildContext context) {

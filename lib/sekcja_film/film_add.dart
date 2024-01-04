@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:xieski_project/sekcja_konektor/connector.dart';
 
 class Film_add extends StatefulWidget {
+
   const Film_add({super.key});
 
   @override
