@@ -27,8 +27,9 @@ class _film_list_tileState extends State<film_list_tile> {
           title: Text(widget.fildata.tytul),
           subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children:[Text(""),
-                Text("")],
+              children:[Text("Gatunek: ${widget.fildata.gatunek} ,rezyser: ${widget.fildata.rezyser} "),
+                Text("czas trwania: ${widget.fildata.czas_trwania} , ocena: ${widget.fildata.ocena}"),
+              Text("opis_filmu:${widget.fildata.opis_filmu}")],
         ),
       ),
     ));

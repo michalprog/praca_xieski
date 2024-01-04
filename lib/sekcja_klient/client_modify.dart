@@ -84,12 +84,16 @@ class _Client_modifyState extends State<Client_modify> {
               width: 300,
               child: ElevatedButton(
                 onPressed: () {
-                  if(imie!=null&&nazwisko!=null&&adres!=null&&telefon!=null) {
+                  if (imie != null &&
+                      nazwisko != null &&
+                      adres != null &&
+                      telefon != null) {
                     setState(() {
                       widget.dane_klienta.imie = imie.text;
                       widget.dane_klienta.nazwisko = nazwisko.text;
                       widget.dane_klienta.adres = adres.text;
-                      widget.dane_klienta.telefon = int.tryParse(telefon.text) ?? 666;
+                      widget.dane_klienta.telefon =
+                          int.tryParse(telefon.text) ?? 666;
                       conn.updateklientData(widget.dane_klienta);
                     });
                   }
